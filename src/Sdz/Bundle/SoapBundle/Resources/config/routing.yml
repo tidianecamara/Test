@@ -1,0 +1,4 @@
+sdz_soap_hello:
+    pattern:  /soap/hello
+    defaults: { _controller: SdzSoapBundle:HelloService:index }
+

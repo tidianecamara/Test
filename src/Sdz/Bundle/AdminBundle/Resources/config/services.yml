@@ -1,0 +1,30 @@
+parameters:
+#    sdz_admin.example.class: Sdz\Bundle\AdminBundle\Example
+
+services:
+#    sdz_admin.example:
+#        class: %sdz_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    sonata.admin.article:
+        class: Sdz\Bundle\AdminBundle\Admin\ArticleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Article" }
+        arguments:
+            - ~
+            - Sdz\Bundle\BlogBundle\Entity\Article
+            - ~
+        calls:
+            - [ setTranslationDomain, [SdzBlogBundle]]
+            
+            
+    sonata.admin.user:
+        class: Sdz\Bundle\AdminBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Utulisateur" }
+        arguments:
+            - ~
+            - Sdz\Bundle\UserBundle\Entity\User
+            - ~
+        calls:
+            - [ setTranslationDomain, [SdzUserBundle]]

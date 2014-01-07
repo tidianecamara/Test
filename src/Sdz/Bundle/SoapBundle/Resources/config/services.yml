@@ -1,0 +1,7 @@
+parameters:
+#    sdz_soap.example.class: Sdz\Bundle\SoapBundle\Example
+
+services:
+#    sdz_soap.example:
+#        class: %sdz_soap.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
